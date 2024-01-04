@@ -10,4 +10,4 @@ elif count == 1:
 else:
     print("{} arguments:".format(count))
 for n in range(count):
-    print("{:d}: {:s}".format(n + 1, sys.argv[n + 1]))
+    print("{}: {}".format(n + 1, sys.argv[n + 1]))
