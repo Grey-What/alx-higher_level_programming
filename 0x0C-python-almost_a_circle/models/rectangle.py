@@ -93,3 +93,50 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """determines area of instance of Rectangle"""
+        return self.__width * self.__height
+
+    def display(self):
+        """prints to stdout object represneted in '#'"""
+        for y in range(0, self.__y):
+            print("")
+
+        for row in range(0, self.__height):
+            for x in range(0, self.__x):
+                print(" ", end="")
+            for col in range(0, self.__width):
+                print("#", end="")
+            print("")
+
+    def __str__(self):
+        """returns representation of instance in specified format"""
+        rep_str = "[Rectangle] (" + str(self.id) + ") "
+        rep_str += str(self.__x) + "/" + str(self.__y)
+        rep_str += " - " + str(self.__width) + "/" + str(self.__height)
+        return rep_str
+
+    def update(self, *args, **kwargs):
+        """updates instance attributes with arguments
+
+        Args:
+             *args (list); arguments to update attributes
+             **kwargs (dict): attribute;value pairs of instance
+        """
+        if args and len(args) != 0:
+            attr_list = ["id", "width", "height", "x", "y"]
+            for attr, val in zip(attr_list, args):
+                setattr(self, attr, val)
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
+
+    def to_dictionary(self):
+        """returns dict representation of Rectangle"""
+        return {
+              "id": self.id,
+              "size": self.width,
+              "x": self.x,
+              "y": self.y,
+        }
