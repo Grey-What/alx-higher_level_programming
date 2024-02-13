@@ -75,3 +75,7 @@ class Base:
                 my_inst = cls(1)
             my_inst.update(**dictionary)
             return my_inst
+
+    @classmethod
+    def load_from_file(cls):
+        """
