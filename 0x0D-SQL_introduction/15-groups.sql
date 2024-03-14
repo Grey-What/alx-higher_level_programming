@@ -3,4 +3,5 @@
 -- and the number of records for each score with label number
 SELECT score, COUNT(*) AS number
 FROM second_table
-GROUP BY score;
+GROUP BY score
+ORDER BY number DESC;
