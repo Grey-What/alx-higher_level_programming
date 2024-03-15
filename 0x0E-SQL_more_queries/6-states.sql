@@ -1,0 +1,9 @@
+-- create a database and table inside of it
+-- table: states
+-- fields: id (int) unique, not null and pk
+-- name (varchar(256)), not null
+CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
+CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states (
+       id INT AUTO_INCREMENT,
+       name VARCHAR(256) NOT NULL,
+       PRIMARY KEY (id));
