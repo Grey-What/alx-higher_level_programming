@@ -16,7 +16,7 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     col = argv[4]
-    query = "SELECT * FROM states WHERE name = '%s' ORDER BY \
+    query = "SELECT * FROM states WHERE name LIKE BINARY '%s' ORDER BY \
              states.id ASC" % (col)
 
     cur.execute(query)
