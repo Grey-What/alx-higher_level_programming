@@ -14,12 +14,12 @@ if __name__ == "__main__":
     """establish connection and create session
        to retrieve all state objects
     """
-    
+
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
              sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
 
     session = Session()
 
-    for inst in session.query(State).order_by(states.id):
+    for inst in session.query(State).order_by(State.id):
         print("{}: {}", inst.id, inst.name)
