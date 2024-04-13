@@ -12,13 +12,16 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == "__main__":
     """list State object that meet condition of containing an a"""
 
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-                           argv[1], argv[2], argv[3]))
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost: \
+                            3306/{}".format(argv[1], argv[2], argv[3]))
     Session = sessionmaker(bind=engine)
 
     session = Session()
     result = session.query(State).filter(State.name.contains('a')).all()
 
-    for row in result:
-        session.query(State).filter(State.name == row.name).delete()
+    if result is not None:
+        for row in result:
+            session.delete(row)
+
     session.commit()
+    session.close()
