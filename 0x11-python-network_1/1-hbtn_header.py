@@ -6,6 +6,7 @@ import urllib.response as urlres
 import sys
 
 
-req = urlreq.Request(sys.argv[1])
-with urlreq.urlopen(req) as res:
-    print(res.info()["X-Request-Id"])
+if __name__ == "__main__":
+    req = urlreq.Request(sys.argv[1])
+    with urlreq.urlopen(req) as res:
+        print(res.info()["X-Request-Id"])
