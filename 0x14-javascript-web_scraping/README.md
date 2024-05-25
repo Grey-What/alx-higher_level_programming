@@ -1,4 +1,8 @@
 # 0x14. JavaScript - Web scraping
+Learning about webscrapping and using node.js modules request to interact with api's and the module fs to interact with files.
+Api's that will be used:
+Star Wars api: https://swapi-api.alx-tools.com
+JSONPlaceholder: https://jsonplaceholder.typicode.com
 
 ### Learning Objectives
 - Why JavaScript programming is amazing

@@ -17,15 +17,16 @@ request(url, (error, response, body) => {
 
 const getCharacters = (index) => {
   if (index === characters.length) {
-  } else {
-    request(characters[index], (error, response, body) => {
-      if (error) {
-        console.log(error);
-      } else {
-        const characterData = JSON.parse(body);
-        console.log(characterData.name);
-        getCharacters(index + 1);
-      }
-    });
+    return;
   }
+
+  request(characters[index], (error, response, body) => {
+    if (error) {
+      console.log(error);
+    } else {
+      const characterData = JSON.parse(body);
+      console.log(characterData.name);
+      getCharacters(index + 1);
+    }
+  });
 };
